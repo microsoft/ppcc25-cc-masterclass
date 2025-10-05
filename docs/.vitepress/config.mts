@@ -14,6 +14,8 @@ export default defineConfig({
         items: [
           { text: "Lab 01", link: "/lab-01/" },
           { text: "Lab 02", link: "/lab-02/" },
+          { text: "Lab 03", link: "/lab-03/" },
+          { text: "Lab 04", link: "/lab-04/" },
         ],
       },
       { text: "Resources", link: "/resources" },
@@ -25,6 +27,8 @@ export default defineConfig({
         items: [
           { text: "Lab 01", link: "/lab-01/" },
           { text: "Lab 02", link: "/lab-02/" },
+          { text: "Lab 03", link: "/lab-03/" },
+          { text: "Lab 04", link: "/lab-04/" },
         ],
       },
     ],
