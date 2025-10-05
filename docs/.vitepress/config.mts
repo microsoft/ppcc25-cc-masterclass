@@ -2,28 +2,28 @@ import { defineConfig } from "vitepress";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Custom Connectors Masterclass",
+  title: "#PPCC25 - Custom Connectors Masterclass",
   base: "/ppcc25-cc-masterclass/",
-  description: "Custom Connectors Masterclass workshop at PPCC 2025",
+  description: "#PPCC25 - Custom Connectors Masterclass workshop",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    nav: [
-      { text: "Home", link: "/" },
-      { text: "Examples", link: "/markdown-examples" },
-    ],
+    nav: [{ text: "Home", link: "/" }],
 
     sidebar: [
       {
-        text: "Examples",
+        text: "Labs",
         items: [
-          { text: "Markdown Examples", link: "/markdown-examples" },
-          { text: "Runtime API Examples", link: "/api-examples" },
+          { text: "Lab 01", link: "/lab-01/" },
+          { text: "Lab 02", link: "/lab-02/" },
         ],
       },
     ],
 
     socialLinks: [
-      { icon: "github", link: "https://github.com/vuejs/vitepress" },
+      {
+        icon: "github",
+        link: "https://github.com/microsoft/ppcc25-cc-masterclass",
+      },
     ],
   },
 });
