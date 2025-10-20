@@ -2,9 +2,9 @@ import { defineConfig } from "vitepress";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "#PPCC25 - Custom Connectors Masterclass",
+  title: "#PPCC25",
   base: "/ppcc25-cc-masterclass/",
-  description: "#PPCC25 - Custom Connectors Masterclass workshop",
+  description: "#PPCC25 - Custom Connectors Masterclass",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
