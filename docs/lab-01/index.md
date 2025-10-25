@@ -58,11 +58,20 @@ The Community Event API will be authenticated by an API Key in the Header of eac
 
 All done! Very important: **You do not need to enter any API Key in this step!** Authentication info is never stored directly in a Custom Connector but only ever in Connections. They will get created later when we are actually are using our Custom Connector.
 
-## ⚡ Create first simple definition
+## 📚 Create demo data
+
+The Event API is a multi tenant application which separates data per user. So as a first step we want to create demo data for it. In this case we are lucky, the Event API offers an action for this, so we don't have to type anything manual!
+
+Event API - Create Demo Data: **POST** request to this url: 
+**https://fa-eventapi-us.azurewebsites.net/api/setup/CreateDemoData** 
+
+We can use this as an ideal test to add the first action to our connector!
 
 Click on **Definition** to get to the next step of creating a Custom Connector, the stage where we define the actual actions which are possible to execute for this Custom Connector.
 
 In this screen you see all actions, triggers, references and policies you have added to your connector. Since we create from Blank this screen will be empty.
+
+### Add action
 
 Let's change that by adding our very first action by clicking on **New Action**
 
@@ -78,12 +87,7 @@ Creating an action consists of three steps:
 
 ### Naming / Description
 
-As a minimum you need to enter a unique id for this action. Choose a name which is easily recognizable and not a typical "id" because later on other actions use this id to refer to it.
-
-We want to call the Community Event API to get a list of all available events, which we can call it with a **GET** request to this url:
-**<https://apim-dhino-fetch-prod-002.azure-api.net/002/export/query/FF4740ED-7415-4D36-80A7-7E7C565806AA/974BB697-57A4-4132-8A6E-C6E11BCE5493/EVENTS>** **TODO**
-
-The two GUIDs in the URL are referencing the environment we want to target and we will consider them static for now, they point to the community database in our community tenant.
+As a minimum you need to enter a unique id for this action. Choose a name which is easily recognizable and not a typical "id" because later on other actions use this id to refer to it. You can you **post-demodata** for this one.
 
 ### Request
 
@@ -91,11 +95,11 @@ Pick an id for this operation and we will go on the **Request** part of it.
 
 The wizard has a great feature called **Import from Example** where you can copy paste an existing request (for example from documentation or lab instructions on GitHub), an the wizard will extract all needed information.
 
-!["Create Request from Example"](./assets/0103_01_requestexample.png)
+!["Create Request from Example"](./assets/0103_03_requestexample_post.png)
 
 In the opened dialog fill in the URL and HTTP method from above. Since this is a simple request with no further information you are all set to go and can click **Import**
 
-!["Create From Example Details"](./assets/0103_02_requestexampledetails.png) **TODO**
+!["Create From Example Details"](./assets/0103_04_requestexampledetails_post.png) 
 
 Congrats, your connector has its first action! 🥳 Let's quickly test if we did all steps correctly so far.
 
@@ -121,13 +125,47 @@ You will be redirect to the test screen. If the **Connection** field is still em
 
 With that we are ready to test! On the left hand you can select the action, and since we only have one which has no parameter you can click directly on **Test**
 
+!["Test Operation"](./assets/0104_06_testoperation_post.png)
+
+If all is set up correct and the connection has the right API Key you will see the result of that API call with a HTTP status 200.
+
+!["Test Result"](./assets/0104_07_testresult_post.png)
+
+First call made by your Custom Connector to the Event API!
+
+## ⚡ Create first real action 
+
+Next we want to test if the demo data was created and add our first real API call to get all event data. The Event API offers this url to get a list of all available events:
+
+Event API - Get Events: **GET** request to this url: 
+**https://fa-eventapi-us.azurewebsites.net/api/events**  
+
+### Request
+
+Follow the same steps as we did for the Create Demo Data operation:
+
+1. Pick an id for this operation and we will go on the **Request** part of it.
+1. Use the **Import from Example** to create the action
+
+!["Create Request from Example"](./assets/0103_01_requestexample.png)
+
+In the opened dialog fill in the URL and HTTP method from above. Since this is a simple request with no further information you are all set to go and can click **Import**
+
+!["Create From Example Details"](./assets/0103_02_requestexampledetails.png) 
+
+1. Update the connector using **Update Connector** and wait until it is finished saving
+
+!["Update Connector"](./assets/0104_08_updateconnector.png) 
+
+### Saving and Testing
+
+1. Test the action under **Test** the same way we did before: On the left select the action, and since this one has no parameter you can click directly on **Test**
+
 !["Test Operation"](./assets/0104_04_testoperation.png)
 
 If all is set up correct and the connection has the right API Key you will see the result of that API call with a HTTP status 200.
 
 !["Test Result"](./assets/0104_05_testresult.png)
-
-First call made by your Custom Connector to the Community Event API!
 
 We will do one more step though, as you might noticed we skip one step in the definition part, the definition of the **Result** of our operation. Since we now have the result JSON let's add it!
 
@@ -164,14 +202,11 @@ First we will create more detailed descriptions of the actions themselves. With 
 
 Add descriptions of what the action is doing, what parameters are needed and what the expected result is. **Do this for all future actions you will add later in these labs as well!**
 
-| Property | What to use it for | 
-|-----|-------------|
-| **Lab 00** | Preparation | 
-| **Lab 01** | Build your first connector |
-| **Lab 02** | Make your connector dynamic | 
-| **Lab 03** | Advanced Custom Connector functions | 
-| **Lab 04** | Copilot Studio integration | 
-**TODO**
+| Property | What to use it for | Best Practice
+|-----|-------------|-------------|
+| **Summary** | Title of action | Use a sentence like "Get all events"
+| **Description** | Verbose explanation of operation's functionality | Use longer sentances like "Return all events available including all their attributes"
+| **Operation ID** | Unique string to identify action | Used internally, use a consistent naming scheme for it
 
 !["Action Details"](./assets/0107_01_actiondetails.png)
 
@@ -185,6 +220,8 @@ Visibility in Power Automate will be displayed like this
 
 So by taking care of these properties, you make your connectors a lot easier to use and more professionally looking. But at the same time, you also prepare them for AI 🙂
 
+Remember to **Update Connector** after you make these changes as well.
+
 ## 🎯 Create an operation with parameter
 
 Let's get into the more interesting stuff, let's make more dynamic operations. You saw that the GET/Events action only returned one event because the environment has this global filter, so let's check out the connected records. For this we will add **Tracks** and **Sessions** with the goal of getting only session of a certain track.
@@ -197,7 +234,7 @@ Follow the same steps as we did in the operation, starting on the **Definition**
 
 !["New Action](./assets/0106_01_newaction.png)
 
-The action is again a GET call to the following URL **<https://apim-dhino-fetch-prod-002.azure-api.net/002/export/query/FF4740ED-7415-4D36-80A7-7E7C565806AA/974BB697-57A4-4132-8A6E-C6E11BCE5493/TRACKS>**  **TODO**
+The action is again a GET call to the following URL **https://fa-eventapi-us.azurewebsites.net/api/events/tracks>**  **TODO**
 
 After following the same steps as we did for the GET/EVENTS, you should see a test result like this:
 
