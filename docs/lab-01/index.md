@@ -87,7 +87,7 @@ The wizard has a great feature called **Import from Example** where you can copy
 
 In the opened dialog fill in the URL and HTTP method from above. Since this is a simple request with no further information you are all set to go and can click **Import**
 
-!["Create From Example Details"](./assets/lab03_02_requestexampledetails.png) **TODO**
+!["Create From Example Details"](./assets/0103_02_requestexampledetails.png) **TODO**
 
 Congrats, your connector has its first action! 🥳 Let's quickly test if we did all steps correctly so far.
 
