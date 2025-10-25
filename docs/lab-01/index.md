@@ -117,7 +117,7 @@ Because the connector is newly created there is no Connection yet so in order to
 
 This will open a new tab where you have the default Create New Connection interface like for all connectors. Which fields are shown is dependent on the selected authentication method. In our case this is the API key. Recognize the name of this field? That's the label we defined in the **Security** step! Click **Create Connection** to create it. 
 
-As API Key use your **User Name**, so when your login is UserXYZ@worksop.onmicrosoft.com use UserYXZ. Make sure to use your User and NOT "UserXYZ" because the API Key differentiates between different users.
+As API Key use your **User Name**, so when your login is UserXYZ@workshop.onmicrosoft.com use UserYXZ. Make sure to use your User and NOT "UserXYZ" because the API Key differentiates between different users.
 
 !["Create Connection"](./assets/0104_03_testcreateconnection.png)
 
@@ -220,51 +220,41 @@ Visibility in Power Automate will be displayed like this
 
 So by taking care of these properties, you make your connectors a lot easier to use and more professionally looking. But at the same time, you also prepare them for AI 🙂
 
+!["Action with filled descriptions"](./assets/0107_04_betteraction.png)
+
 Remember to **Update Connector** after you make these changes as well.
 
 ## 🎯 Create an operation with parameter
 
-Let's get into the more interesting stuff, let's make more dynamic operations. You saw that the GET/Events action only returned one event because the environment has this global filter, so let's check out the connected records. For this we will add **Tracks** and **Sessions** with the goal of getting only session of a certain track.
+Let's get into the more interesting stuff, let's make more dynamic operations. The Event API has a lot more connected information regarding events, so let's check out those actions. For this we will add **Tracks** and **Sessions** with the goal of getting only that data per event.
 
-For that we will need the Tracks first so let's start with them!
+For the next steps you need the Id of an event to get it's related tracks and sessions. Use the GET/Events action added earlier to retrieve a list of events and pick one. The event id is called **RowKey** in the result. The lab will use **Power Platform Community Conference 2025** with the RowKey **54434FB9-66EC-4D93-B281-18EE129110AF** as an example. 
+
+!["New Action](./assets/0106_00_eventid.png)
 
 ### GET/Tracks
 
-Follow the same steps as we did in the operation, starting on the **Definition** screen and click on **New Action**
+Follow the same steps as we did in the operation, starting on the **Definition** screen and click on **New Action** and add a **get-tracks** action.
 
 !["New Action](./assets/0106_01_newaction.png)
 
-The action is again a GET call to the following URL **https://fa-eventapi-us.azurewebsites.net/api/events/tracks>**  **TODO**
+Next step is calling the action which returns us tracks filtered by event. The Event API offers the following GET endpoint, here as an example for the event **Power Platform Community Conference**:
 
-After following the same steps as we did for the GET/EVENTS, you should see a test result like this:
+**https://fa-eventapi-us.azurewebsites.net/api/events/54434FB9-66EC-4D93-B281-18EE129110AF/tracks**
 
-!["Tracks Results"](./assets/0106_02_tracksresult.png)
+This is the endpoint for the event **South Coast Summit 2025**:
 
-Like we did before copy these and add them as the **Default Response** in the definition screen for the Tracks action. If you click on the Default Action afterwards the properties should be parsed like this:
+**https://fa-eventapi-us.azurewebsites.net/api/events/D406AC81-AF37-48E2-AED0-1147FFCDFF23/tracks**
 
-!["Track Results Parsed"](./assets/0106_03_tracksdefaultresponse.png)
+The dynamic part of this request is event id after "events/" and before "/tracks"
 
-Tip: Make sure to select the correct action on the left hand side before Import the Default Response, or you might risking overwriting the response of the first action.
-
-### GET/Session By Track
-
-Next step is calling the action which returns us sessions filtered by track. The Community Event API offers the following GET endpoint, here as an example for the track **Power Platform**:
-
-**<https://apim-dhino-fetch-prod-002.azure-api.net/002/export/query/FF4740ED-7415-4D36-80A7-7E7C565806AA/974BB697-57A4-4132-8A6E-C6E11BCE5493/SESSIONSBYTRACK?filter=2653cbaf-c0aa-f011-bbd2-7ced8d40f28f>** **TODO**
-
-This is the endpoint for track **Dynamics 365**:
-
-**<https://apim-dhino-fetch-prod-002.azure-api.net/002/export/query/FF4740ED-7415-4D36-80A7-7E7C565806AA/974BB697-57A4-4132-8A6E-C6E11BCE5493/SESSIONSBYTRACK?filter=8326f5b6-c0aa-f011-bbd2-7ced8d40f28f>** **TODO**
-
-The dynamic part of this request is the part after the "?filter=" followed by the **Id** of a track.
-
-So our first step is adding an action which takes one parameter. For that we go to **Definition** and add another action, give it an id, and use the **Import From Sample** function.
+Select your newly created **get-tracks** action and use the  **Import From Sample** function.
 
 !["Add Action With Parameter"](./assets/0106_04_addparameteraction.png)
 
 Copy the URL from above, but this we modify the URL and mark which part should be a parameter. This is done by replacing the text with "{PARAMETERNAME}", so if we want to add a parameter named "trackid" we use the following URL:
 
-**<https://apim-dhino-fetch-prod-002.azure-api.net/002/export/query/FF4740ED-7415-4D36-80A7-7E7C565806AA/974BB697-57A4-4132-8A6E-C6E11BCE5493/SESSIONSBYTRACK?filter={trackid}>** **TODO**
+**https://fa-eventapi-us.azurewebsites.net/api/events/{eventid}/tracks** 
 
 !["Dynamic Parameter"](./assets/0106_05_dynamicparamter.png)
 
@@ -272,7 +262,7 @@ After clicking on **Import** you directly see that our request now has a paramet
 
 !["Parameter displayed"](./assets/0106_06_parameteradded.png)
 
-If you click on the parameter and select **Edit** you can check it's properties. We have a lot of options here, for now let's just set it to **Required = Yes** because without a value the API will error out.
+If you click on the parameter and select **Edit** you can check it's properties. We have a lot of options here, for now let's just set it to **Required = Yes** because without a value the API will error out. You should also fill the **Summary** and **Description** attributes to make it easier for users and AIs to understand what this parameter is used for!
 
 !["Parameter Config"](./assets/0106_07_parameterconfig.png)
 
@@ -280,6 +270,18 @@ After this let's test our new function! **Update Connector** and move to the **T
 
 !["Test Parameter"](./assets/0106_08_testparameter.png)
 
-This works pretty well! But obviously this not an ideal user experience, you need to know very cryptic GUIDs and there is no support on how to enter them. Let's improve that in the next lab!
+This works pretty well! But obviously this not an ideal user experience, you need to know very cryptic GUIDs and there is no support on how to enter them. We will look how to improve that in the next chapter.
+
+Before we do that remember to also define the **Response** of the new get-tracks action by using the result you get here and add it the same way as shown before as the **Default Response**.
+
+### GET/Sessions
+
+Exercise for you! The Event API also has an endpoint which lists all sessions of an event. It works the same way as the GET/Tracks action, so let's implement it in the same way.
+
+Event API - Get Sessions: **GET** request to this url: 
+**https://fa-eventapi-us.azurewebsites.net/api/events/{eventid}/sessions**  
+
+After implementing it test your action and you should get a result like this:
+!["Successful test of Get Sessions"](./assets/0106_09_testsessions.png)
 
 Congrats! You have build a simple connector completely from scratch! In the next lab we will look into extending it and also making it dynamic 💪
