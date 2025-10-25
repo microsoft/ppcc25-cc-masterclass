@@ -100,7 +100,7 @@ After confirming that you want to run the flow you can close the dialog and will
 
 !["Flow Success"](./assets/0203_02_flowsuccess.png)
 
-Because we defined the Reponses of all our actions it's also pretty easy to combine them. For example we can use the GET/Events action to get an array of all events and then iterate through them to get all their tracks.
+Because we defined the reponses of all our actions it's also pretty easy to combine them. For example we can use the GET/Events action to get an array of all events and then iterate through them to get all their tracks.
 
 For this we add the GET/Events action above our GET/Tracks action and want to use it's output in it. For this you have to select **Enter Custom Value** in the dynamics dropdown to dynamically fill this value (🤪)
 
@@ -112,4 +112,4 @@ And because we defined the response properties of our GET/Tracks action we can n
 
 And the Custom Connector also knows that GET/Events returns an array (because we defined the reponse of the action!), so it automatically wraps the action in an **Apply to Each**
 
-!["Apply To Each"](./assets/lab03_02_applytoeach.png)
+!["Apply To Each"](./assets/0203_05_applytoeach.png)
