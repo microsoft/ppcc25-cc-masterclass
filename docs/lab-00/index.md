@@ -24,7 +24,7 @@ Microsoft Edge comes pre-installed on Windows 10 and 11. If you need to install 
 2. Click on the profile icon on the top left corner
 3. Hover over "Other Microsoft Edge Browsers" / "Other profiles" and then select **Add Browser** / **Add profile**
 
-    ![Add new browser profile](assets/0000-0_add-new-browser-profile.png)
+    ![Add new browser profile](./assets/add-new-browser-profile.png)
 
 4. Click **Add**
 
@@ -35,11 +35,11 @@ Microsoft Edge comes pre-installed on Windows 10 and 11. If you need to install 
 5. Pin that browser window to your taskbar
 6. In the new browser window, select **Start without your data**
 
-    ![Start without your data](assets/0000-2_start-without-your-data.png)
+    ![Start without your data](./assets/start-without-your-data.png)
 
 7. Then select **Confirm and start browsing**.
 
-    ![Confirm and start browsing](assets/0000-3_confirm-and-start-browsing.png)
+    ![Confirm and start browsing](./assets/confirm-and-start-browsing.png)
 
     It may prompt you to configure your new browser theme. If this happens, just select **Next** and then **Finish**.
 
