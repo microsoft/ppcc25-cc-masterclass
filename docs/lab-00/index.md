@@ -77,7 +77,7 @@ Because of that our first step in the Power Apps Maker portal is to navigate to 
 
 !["Create new solution"](./assets/0010-0_createsolution.png)
 
-In the dialog which open give your solution a meaningful name and select either create an own publisher by clicking **New** or use the **Default Publisher** named after your environment.
+In the dialog which open give your solution a meaningful name and select either create an own publisher by clicking **New** or use the **Default Publisher** named after your environment (will be named differently than the one in this screenshot).
 
 !["Create Solution Dialog"](./assets/0010-1_solutionwizard.png)
 

@@ -24,7 +24,7 @@ First step is given your Custom Connector a meaningful name, make sure to use a 
 
 Next you need to select **HTTPS** and fill in the **Host** and **Base URL**. The community event API can be reached via dhino (Middleware used to publish Dataverse data) under the following url. Do not fill the "https://" part in the host and you can only put the root URL until the first "/" there. The "Base URL" is the part of the URL which is common to all requests being done via this custom connector.
 
-**<https://apim-dhino-fetch-prod-002.azure-api.net/002 >** **TODO**
+**<https://fa-eventapi-us.azurewebsites.net/api >** **TODO**
 
 !["Adding Host and Base URL"](./assets/0100_02_hosturl.png) **TODO**
 
