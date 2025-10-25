@@ -5,6 +5,7 @@ export default defineConfig({
   title: "#PPCC25",
   base: "/ppcc25-cc-masterclass/",
   description: "#PPCC25 - Custom Connectors Masterclass",
+  head: [['link', { rel: 'icon', href: '/Connectors.svg' }]],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
