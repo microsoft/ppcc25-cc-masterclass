@@ -1,6 +1,6 @@
 # #PPCC25 - Custom Connector Masterclass
 
-![Copilot Studio](https://img.shields.io/badge/Copilot%20Studio-Extensibility-blue)
+![Copilot Studio](https://img.shields.io/badge/Custom%20Connector-Masterclass-blue)
 ![Workshop](https://img.shields.io/badge/Workshop-Full%20Day-green)
 ![Level](https://img.shields.io/badge/Level-Intermediate-orange)
 
