@@ -48,20 +48,16 @@ By the end of this workshop, you will have:
 
 | Time | Activity |
 |------|----------|
-| 09:00 | **Registration** |
-| 09:00 – 09:30 | ☕ **Coffee + Introduction** |
-| 09:30 – 09:45 | **Introduction & Setting the Scene** |
-| 09:45 – 10:30 | **Lab 01: Setup** |
-| 10:30 – 10:45 | ☕ **Break** |
-| 10:45 – 11:00 | **Lab 02: Presentation** |
-| 11:00 – 12:00 | **Lab 02: Build Agent with Copilot Studio** |
-| 12:00 – 12:15 | **Lab 03: Presentation** |
-| 12:15 – 13:15 | 🍽️ **Lunch** |
-| 13:15 – 14:15 | **Lab 03: Build Connector** |
-| 14:15 – 14:30 | **Lab 04: Presentation** |
-| 14:30 – 15:30 | **Lab 04: Model Context Protocol** |
-| 15:30 – 15:45 | ☕ **Break** |
-| 15:40 – 16:00 | **AMA & Closing** |
+| 09:00 – 09:30 | **Welcome & Kick-Off** |
+| 09:30 – 09:45 | **Introduction & Lab 00** |
+| 09:45 – 10:45 | **Lab 01: Build your first connector** |
+| 10:45 – 11:00 | ☕ **Break** |
+| 11:00 – 12:00 | **Lab 02: Make your connector dynmamic** |
+| 12:00 – 13:00 | 🍽️ **Lunch** |
+| 13:00 – 14:45 | **Lab 03: Advanced Features** |
+| 14:45 – 15:00 | ☕ **Break** |
+| 14:30 – 15:30 | **Lab 04: Copilot Studio Integration** |
+| 15:30 – 16:00 | **AMA & Closing** |
 | 16:00 | **Finish** |
 
 ## 🎒 What to Bring
@@ -84,7 +80,7 @@ By the end of this workshop, you will have:
 | **Lab 00** | Preparation | [Go to Lab 00](./lab-00/index.md) |
 | **Lab 01** | Build your first connector | [Go to Lab 01](./lab-01/index.md) |
 | **Lab 02** | Make your connector dynamic | [Go to Lab 02](./lab-02/index.md) |
-| **Lab 03** | Advanced Custom Connector functions | [Go to Lab 03](./lab-03/index.md) |
+| **Lab 03** | Advanced Custom Connector features | [Go to Lab 03](./lab-03/index.md) |
 | **Lab 04** | Copilot Studio integration | [Go to Lab 04](./lab-04/index.md) |
 
 ---
