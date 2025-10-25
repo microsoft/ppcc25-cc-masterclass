@@ -149,6 +149,34 @@ Also remember to **Update Connector** to publish your changes!
 
 !["Update Connector"](./assets/0105_05_updateconnector.png)
 
+## 🔥 Increase the UX with user-friendly names
+One thing you could quickly tell was that our clear **operation ids** are not very user friendly in these kinds of UIs. But the great thing is that we can actually do something about this and within the Custom Connector add more information. For this we will go back to our Custom Connector, edit it, and go to definitions to update our Actions.
+
+First we will create more detailed descriptions of the actions themselves. With these you can give your action friendly names and also provide additional explanations which will be displayed as extended texts or tooltips. **And of course these descriptions are immensely  important for any AI you want to use your Custom Connector with.** Since AI is working with natural language description, these descriptions in Custom Connectors are not any longer nice to have, but an important step in increasing the quality of it!
+
+Add descriptions of what the action is doing, what parameters are needed and what the expected result is. **Do this for all future actions you will add later in these labs as well!**
+
+| Property | What to use it for | 
+|-----|-------------|
+| **Lab 00** | Preparation | 
+| **Lab 01** | Build your first connector |
+| **Lab 02** | Make your connector dynamic | 
+| **Lab 03** | Advanced Custom Connector functions | 
+| **Lab 04** | Copilot Studio integration | 
+**TODO**
+
+!["Action Details"](./assets/0107_01_actiondetails.png)
+
+You should do the same with parameters or response properties if you go into the edit mode of those. You can also control the **Visibility** to either hide or promote actions.
+
+!["Visibility"](./assets/0107_02_visibility.png)
+
+Visibility in Power Automate will be displayed like this
+
+!["Visibility in Power Automate"](./assets/0107_03_visibilitydisplay.png)
+
+So by taking care of these properties, you make your connectors a lot easier to use and more professionally looking. But at the same time, you also prepare them for AI 🙂
+
 ## 🎯 Create an operation with parameter
 
 Let's get into the more interesting stuff, let's make more dynamic operations. You saw that the GET/Events action only returned one event because the environment has this global filter, so let's check out the connected records. For this we will add **Tracks** and **Sessions** with the goal of getting only session of a certain track.
@@ -207,6 +235,6 @@ After this let's test our new function! **Update Connector** and move to the **T
 
 !["Test Parameter"](./assets/0106_08_testparameter.png)
 
-This works pretty well! But obviously this not an ideal user experience, you need to know very cryptic GUIDs and there is no support on how to enter them. Let's improve that in the next step!
+This works pretty well! But obviously this not an ideal user experience, you need to know very cryptic GUIDs and there is no support on how to enter them. Let's improve that in the next lab!
 
 Congrats! You have build a simple connector completely from scratch! In the next lab we will look into extending it and also making it dynamic 💪
