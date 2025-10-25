@@ -50,11 +50,11 @@ With the credentials that were provided to you, let's log into the account you a
 1. Go to [make.powerapps.com](https://make.powerapps.com)
 2. On the sign-in screen, enter the email address that has been provided to you and then click **Next**
 
-   ![Sign in screen](./assets/0000-0_sign-in-email.png)
+   ![Sign in screen](./assets/0001-0_sign-in-email.png)
 
 3. Then enter the Temporary Access Pass that has been provided to you and click **Sign in**
 
-   ![Sign in screen](./assets/0000-1_sign-in-password.png)
+   ![Sign in screen](./assets/0001-1_sign-in-password.png)
 
 4. If you're prompted to stay signed in, click **Yes**
 5. If you're prompted which region you want to use you can stay in the default United States and just click on  **Get Started**
