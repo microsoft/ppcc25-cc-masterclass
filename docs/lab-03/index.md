@@ -25,7 +25,7 @@ In the Swagger Editor, the left screen is the actual editor, while the right sid
 
 Be aware that the sorting order of the actions is different than in the UI editor. In the Swagger editor actions are sorted by their **Url Path** not the Operation-Id. But you have all the attributes you see in the UI editor and more! Use the Swagger editor to make changes to one action. Recommendation: Change **Summary** & **Description** of one + check if you have added Summaries and Description for all actions.
 
-!["Changes via Swagger Editor"](./assets/0301_02_swaggereditorchanges.png)
+!["Changes via Swagger Editor"](./assets/0301_03_swaggereditorchanges.png)
 
 Afterwards change back to the UI editor by using the **Swagger Editor** again and you will see that the attributes you changed are also changed here. Be aware, in order to update your connector you still need to use **Update Connector** in the top navigation.
 
