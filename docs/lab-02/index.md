@@ -4,6 +4,7 @@ In this lab, you will go through the following tasks:
 
 * Make parameters of action dynamic
 * Linking dynamic parameters
+* Usage of Custom Connectors in Power Automate and Power Apps
 
 You will extend the connector you started building in the previous lab.
 
@@ -158,7 +159,7 @@ Similar to before create a new Power Automate Flow with Manual trigger called **
 
 If you change the selected Event in the first parameter and open the dropdown for trackid you will see the loading of the tracks for that event.
 
-### Exercise!
+## 🔥 Bonus Exercise 1: Build dynamics Flow
 
 Build a new flow that combines the elements we created before:
 
@@ -168,9 +169,30 @@ Build a new flow that combines the elements we created before:
 
 Awesome! We now added actions with more parameters and linked them with each other. The linking of parameter can be done in more area and in the next lab we will looking into making the connector even more dynamic!
 
+## 🔥 Bonus Exercise 2: Use Custom Connector in Power Apps
+We used Custom Connectors only with Power Automate so far, but they can be used in more places within the Power Platform. One of them is Canvas Power Apps. In this bonus exercise you are challenged to build a Power Apps using the Event API Custom Connector which displays Events with their tracks and sessions.
 
+## Create Canvas App
+Within your solution go to **New** -> **App** -> **Canvas App** to create a new app. Within Canvas Apps you can add Custom Connectors just like any other data source or standard connector.
 
+To do so go to **Data** -> **Add data** -> Search for your Custom Connector by name and select it.
 
+!["Add Custom Connector as data source"](./assets/0205_01_addcustomconnector.png)
 
+Afterwards either select one of your already existing connections for it or create a new one using your API Key.
 
+When the Custom Connector is added as a data source you can start using it in PowerFx for controls by referencing it and its actions.
 
+!["Use Custom Connector as data source"](./assets/0205_02_itemsource.png)
+
+Because we added definitons for the response of all our actions, we can use that information in PowerFx as well!
+
+!["Use attributes of data"](./assets/0205_03_attributes.png)
+
+With this you should be able to build a nice looking Canvas which can fulfill the following criteria:
+- Show a list of all events
+- When an event is selected show a list of the tracks of that event
+- When a track is selected show the sessions of that track
+
+> [!NOTE]
+> Yes the demo data is very similar between all the events 🙂
