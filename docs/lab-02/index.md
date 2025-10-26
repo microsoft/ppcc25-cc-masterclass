@@ -151,6 +151,7 @@ To make this action truly dynamic we want to use an existing parameter. Pick the
 !["Parameters for trackid"](./assets/0204_03_gettracksparameter.png)
 
 After selecting **eventid** select similar than before **RowKey** as the id from the GET/Tracks action and **Name** as the display value.
+
 > [!NOTE]
 > If after selecting the Operation ID no values for the Dropdowns "Value" and "Value Display Name" are shown, then you have not defined the response of that action! Check in the previous lab the part **[Result of Operation](../lab-01/#result-of-operation)**
 
