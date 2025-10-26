@@ -54,7 +54,7 @@ By the end of this workshop, you will have:
 | 12:00 – 13:00 | 🍽️ **Lunch** |
 | 13:00 – 13:30 | **Buffer: Finishing Lab 01 & 02** |
 | 13:30 – 14:30 | **Lab 03: Advanced Features** |
-| 14:30 – 14:45 | ☕ **Break** |
+| 14:30 – 14:45 | 💧 **Break** |
 | 14:45 – 15:30 | **Lab 04: Copilot Studio Integration** |
 | 15:30 – 16:00 | **AMA & Closing** |
 | 16:00 | **Finish** |
