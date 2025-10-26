@@ -1,8 +1,8 @@
 # Resources
 
-### Workshop presentations
+## Workshop presentations
 
-- [PowerPoint](https://raw.githubusercontent.commicrosoft/ppcc25-cc-masterclass/blob/main/docs/presentations/PPCCCustomConnectorMasterclass.pdf)
+- [PowerPoint](https://github.com/microsoft/ppcc25-cc-masterclass/blob/de01e1d60bbab3f38226b721b088f93e3258e050/docs/presentations/PPCCCustomConnectorMasterclass.pdf)
 
 ## Microsoft Official Documentation
 
