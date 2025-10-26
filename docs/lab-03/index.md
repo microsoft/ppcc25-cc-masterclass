@@ -200,7 +200,7 @@ Scroll down to **Webhook Response** and add a name for it. Then click on **Impor
 {
   "EventId": "0D8F2A1D-5398-4B63-BA11-32F12021D10A",
   "Topic": "Forms",
-  "Content": "{}"
+  "Content": "abc"
 }
 ```
 
