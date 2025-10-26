@@ -102,23 +102,12 @@ When you go to the **body** parameter and click on **Edit** you see that we do n
 !["Submit Form in Swagger Editor"](./assets/0303_03_swaggrsubmitform.png)
 
 You will see that the body parameter is defined, but has currently no details added to it. We will overwrite this parameter manually in the Swagger Editor.
-!["Body parameter without details"](./assets/0303_04_submitemptybody.png)
 
 **Before**  
-- name: body  
-        in: body  
-        required: false  
-        schema:  
-        type: object  
-        properties: {}
+!["Body parameter without details"](./assets/0303_04_submitemptybody.png)
 
 **After**
-``- name: body  
-          in: body  
-          required: false  
-          schema:  
-            type: object  
-            properties: {}``
+!["Body parameter with details"](./assets/0303_04b_submitbody.png)
 
 After you made these changes, **Update Connector** and go back to Power Automate and create a new Flow **Submit Form** and add the action **Submit Form**. 
 
@@ -127,3 +116,46 @@ At the beginning before you have filled the parameter you will only see the two 
 
 After you fill the two parameter - and wait a few seconds for the connector to make the call to grab the schema, depending on what schema you picked the action will show it's fields.
 !["Submit Form with Parameters filled"](./assets/0303_06_paafter.png)
+
+Congrats! You modified your first action via the Swagger Editor and enabled it to have a dynamic schema in one of it's action!
+
+**TODO** Response
+
+## 🪝 Custom Triggers via Webhook
+Next up we want to make our connector also reactive, so far we only implemented actions - and actions always have to be triggered by something in the Power Platform. If you want to be able to react to external events you need to implement a **Trigger** in your custom connector.
+
+The Event API offers a webhook for when someones submits a form for an event, we want to create a trigger in our Custom Connector to be able to start logic in Power Platform when this happens.
+
+### Create a custom Trigger
+Go back to your Connector, to **Definition** and this time we don't click on create new action but on **New Trigger**.
+
+!["Create a new trigger"](./assets/0304_01_newtrigger.png)
+
+The attributes of a trigger are very similar to an action, make sure to fill Operation Id, Summary and Description. Additonally you must select what type of trigger you want to create. What type should be used is depending on the API you are connecting to, the Event API supports **Webhook**.
+
+!["Trigger attributes"](./assets/0304_02_triggersettings.png)
+
+Afterwards we need to define the API endpoint of the API where webhooks can be registered. For this click on **Import from sample** and similar as you did with the actions add the url for the webhook registration here. For the Event API use this endpoint:
+
+Event API - Register Webhook: **POST** request to this url: 
+**https://fa-eventapi-us.azurewebsites.net/api/events/{eventid}/webhooks**  
+Registers a webhook for the specified event. You need to send a body with these parameters:
+- Topic (what to subscribe to)
+- CallbackUrl
+
+Fill the data like this in the Import Wizard:
+!["Trigger import wizard"](./assets/0304_03_importwizard.png)
+
+After clicking on **Import** you will see the parameters being added to the trigger. Click on **Edit** of the **body** parameter and check the parameters in there. 
+- Make sure both are set to **Required**
+- Make sure the visiblity of **CallbackUrl** is set to **internal**. This is required by the Custom Connector, because this parameter will be filled automatically and can not be changed by the user.
+!["Trigger parameters"](./assets/0304_05_triggerparameters.png)
+
+
+Scroll down to **Webhook Response** and add a name for it. For now we will not add more information.
+!["Trigger response"](./assets/0304_04_formsubmission.png)
+
+Afterwards scroll a down a bit more to **Trigger Configuration** and select **CallbackUrl** as the **Callback URL parameter**. This tells the Custom Connector which parameter it should use to automatically add a callback url. This url will be used by the Event API to send a notification when the trigger should be executed.
+!["Callback Url parameter"](./assets/0304_06_callbackurl.png)
+
+Very good! **Update Connector** and let's test it!
