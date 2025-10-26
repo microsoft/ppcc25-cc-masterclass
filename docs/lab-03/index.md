@@ -76,3 +76,41 @@ For the **Event API - Get Form Schema** we want to do one special thing. This fu
 Perfect! When you have added these two function let's combine them for the Submit Form action in the next step.
 
 ### Add Submit Form action
+The Submit Form of the Event API sends a payload in the Body of the request for a specific form of a specific event. The body is a JSON object and what fields should be in there is definied by the schema of the form. So we want to the action to do this:
+- Get Event and Form as dynamic parameters
+- Use these two parameters to call the GET/Form-Schema action and get the schema
+- Use the schema to show the users which fields are available
+- Send the entered fields as body to the Submit Form endpoint.
+
+With our prepartion we are almost there!
+
+Let's start by adding the action like we did before. The endpoint is the following:
+
+Event API - Submit Form: **POST** request **with** body to this url: 
+**https://fa-eventapi-us.azurewebsites.net/api/events/{eventid}/forms/{formid}**  
+Submit a form with the entered data.
+
+Use the **Import From Sample** and make sure to select **POST** add a - for now - empty JSON {} as **Body**.
+!["Import Submit Form"](./assets/0303_02_importsubmitform.png)
+
+For the **eventid** and **formid** use the UI to make the parameters dynamics as we did with the previous actions.
+
+When you go to the **body** parameter and click on **Edit** you see that we do not have the option here in the UI to make it dynamic. This is a feature which we can only edit directly in the Swagger Editor. So go back to the action definitions and toggle the **Swagger Editor** and search for the submit-form action there.
+
+!["Submit Form in Swagger Editor"](./assets/0303_03_swaggrsubmitform.png)
+
+You will see that the body parameter is defined, but has currently no details added to it. We will overwrite this parameter manually in the Swagger Editor.
+!["Body parameter without details"](./assets/0303_04_submitemptybody.png)
+
+**Before**
+``- name: body
+          in: body
+          required: false
+          schema:
+            type: object
+            properties: {}``
+
+**After**
+
+
+
