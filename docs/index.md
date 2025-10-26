@@ -46,11 +46,11 @@ By the end of this workshop, you will have:
 
 | Time | Activity |
 |------|----------|
-| 09:00 – 09:30 | **Welcome & Kick-Off** |
-| 09:30 – 09:45 | **Introduction & Lab 00** |
-| 09:45 – 10:30 | **Lab 01: Build your first connector** |
-| 10:30 – 10:45 | ☕ **Break** |
-| 10:45 – 12:00 | **Lab 02: Make your connector dynamic** |
+| 09:00 – 09:15 | **Welcome & Kick-Off** |
+| 09:15 – 09:30 | **Introduction & Lab 00** |
+| 09:30 – 10:00 | **Lab 01: Build your first connector** |
+| 10:00 – 10:20 | ☕ **Break** |
+| 10:20 – 12:00 | **Continue Lab 01 & Lab 02: Make your connector dynamic** |
 | 12:00 – 13:00 | 🍽️ **Lunch** |
 | 13:00 – 13:30 | **Buffer: Finishing Lab 01 & 02** |
 | 13:30 – 14:30 | **Lab 03: Advanced Features** |
