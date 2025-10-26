@@ -31,9 +31,20 @@ Afterwards change back to the UI editor by using the **Swagger Editor** again an
 
 Small exercise: Look for an action with dynamic parameters and check how the dynamic parameters are represented in the YAML file. In the next steps we will configure a similar feature directly here in the Swagger Editor.
 
-## 🔍 The wonderful Open-Source-Connector World
+### Swagger Editor as Debugger
+Some errors are also only shown when you are opening the Swagger Editor. **This is an important debug step:** When you Update your Connector but even after a few minutes the changes are not showing up in Power Automate UI check the Swagger Editor. Sometimes there can be error which are not shown in the normal UI but which prohibit the publication of the connector.
 
-**TODO**
+## 🔍 The wonderful Open-Source-Connector World
+One more "hidden" feature of Standard Connectors in Power Platform is that they are almost all opensource. This is a great source for inspiration and to look for tips. Microsoft has all the connector definitions in one [GitHub Repository](https://github.com/microsoft/PowerPlatformConnectors)
+
+You can ignore most of the folders there, the interesting ones are:
+- certified-connectors
+- custom-connectors
+- independant-publisher-connectors
+
+Go to **certified-connectors** and look for a standard connector you have used before. If you open its folder you will a **apiDefinition.swagger.json** file. This is same content we saw before in our Custom Connector as YAML, here it is only formatted as a JSON file. But you can check out how actions are structured and what attributes these connectors are using.
+
+A great source for inspiration or debugging when something is not working as expected!
 
 ## 💫 Making Action Schemas dynamic
 One of the features you often see in Standard Connector is another dynamic feature: The dynamic Schema. It is used when you selected on parameter in an action, and based on that selection the "schema" aka the fields shown in that action are changed. Probably the most used actions utilizing this feature are in the Dataverse Connector. Every Create / Update action works like this, first you select the Table and based on this the action will show you all available fields of that table, including all customizations only available in the current environment.
@@ -119,8 +130,6 @@ After you fill the two parameter - and wait a few seconds for the connector to m
 
 Congrats! You modified your first action via the Swagger Editor and enabled it to have a dynamic schema in one of it's action!
 
-**TODO** Response
-
 ## 🪝 Custom Triggers via Webhook
 Next up we want to make our connector also reactive, so far we only implemented actions - and actions always have to be triggered by something in the Power Platform. If you want to be able to react to external events you need to implement a **Trigger** in your custom connector.
 
@@ -151,6 +160,8 @@ After clicking on **Import** you will see the parameters being added to the trig
 - Make sure the visiblity of **CallbackUrl** is set to **internal**. This is required by the Custom Connector, because this parameter will be filled automatically and can not be changed by the user.
 !["Trigger parameters"](./assets/0304_05_triggerparameters.png)
 
+Also **Edit** the **eventid** parameter and make it dynamic like we did with the other actions.
+
 
 Scroll down to **Webhook Response** and add a name for it. For now we will not add more information.
 !["Trigger response"](./assets/0304_04_formsubmission.png)
@@ -159,3 +170,16 @@ Afterwards scroll a down a bit more to **Trigger Configuration** and select **Ca
 !["Callback Url parameter"](./assets/0304_06_callbackurl.png)
 
 Very good! **Update Connector** and let's test it!
+
+### Testing the custom trigger
+We will test the trigger using Power Automate, so navigate back there and create a new flow, this time not a Manual one, but instead an **Automated** one. In the Dialog select **Skip**, we will give it a name and select the trigger in the next step.
+
+!["Create Automated Flow"](./assets/0305_01_automatedflow.png)
+
+In the Flow Editor first give the flow a name and afterwards go to **Custom** in the trigger action and select **Event API**. You should see your trigger here, select it. You will see all triggers of our Custom Connector and there the **When a form is submitted** we just created.
+!["Custom trigger"](./assets/0305_02_customtrigger.png)
+
+**TODO**
+
+## 🔥 Bonus-Challenge #1: Form Submitter Power Apps
+In order to make testing our Trigger easier it would be great to have a Canvas App where user can easily submit forms. Your challenge is to build such an app!
