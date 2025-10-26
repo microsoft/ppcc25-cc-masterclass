@@ -24,4 +24,16 @@ Select the solution you created before and press **Update**. Now your agent is a
 
 !["Connect with a solution"](./assets/lab02_01_copilotstudio2.png)
 
-After creating the agent, add **Instructions**. In our lab we are going to create an agent to help users picking new devices when ordering with internal IT.
+## 📝 Basic setup for agent
+
+## 💯 Adding the Custom Connector to your agent
+
+Now let's navigate back to Copilot Studio to add our Custom Connector to an agent. In Copilot Studio click on **Tools** and **Add Tool**
+
+!["Add Tool"](./assets/lab03_copilot0.png)
+
+Select **Connector** and search for your connector name, you will see all the actions you defined before!
+
+!["Add Custom Connector"](./assets/lab03_copilot1.png) **TODO**
+
+You can add multiple Actions as tools, do this and test your agent with the Custom connector!

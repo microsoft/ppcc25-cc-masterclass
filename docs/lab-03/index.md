@@ -162,8 +162,12 @@ After clicking on **Import** you will see the parameters being added to the trig
 
 Also **Edit** the **eventid** parameter and make it dynamic like we did with the other actions.
 
-
-Scroll down to **Webhook Response** and add a name for it. For now we will not add more information.
+Scroll down to **Webhook Response** and add a name for it. Then click on **Import from Sample** and add the following payload as **Body**
+``{
+  "EventId": "0D8F2A1D-5398-4B63-BA11-32F12021D10A",
+  "Topic": "Forms",
+  "Content": "{}"
+}``
 !["Trigger response"](./assets/0304_04_formsubmission.png)
 
 Afterwards scroll a down a bit more to **Trigger Configuration** and select **CallbackUrl** as the **Callback URL parameter**. This tells the Custom Connector which parameter it should use to automatically add a callback url. This url will be used by the Event API to send a notification when the trigger should be executed.
@@ -179,7 +183,19 @@ We will test the trigger using Power Automate, so navigate back there and create
 In the Flow Editor first give the flow a name and afterwards go to **Custom** in the trigger action and select **Event API**. You should see your trigger here, select it. You will see all triggers of our Custom Connector and there the **When a form is submitted** we just created.
 !["Custom trigger"](./assets/0305_02_customtrigger.png)
 
-**TODO**
+Select the event you want to subscribe for and enter **Forms** as topic, so that the Event API knows what you are subscribing to.
+
+!["Selected event in trigger"](./assets/0305_03_triggerfields.png)
+
+Afterwards create any kind of notification to be notified about new submissions, you can for example use the Outlook 365 connector to send your user a mail.
+
+!["Notification action"](./assets/0305_04_notificationflow.png)
+
+And here we are, submit a form for example by triggering the Submit Form flow we built earlier and tada! Here is our notification 🙂
+
+!["Notification mail"](./assets/0305_05_email.png)
+
+Congratulation! You have build a complete flow including dynamic action, custom trigger and hopefully got descriptions! How good the descriptions are will be tested in the next lab where we will use the Custom Connector for an Event agent.
 
 ## 🔥 Bonus-Challenge #1: Form Submitter Power Apps
 In order to make testing our Trigger easier it would be great to have a Canvas App where user can easily submit forms. Your challenge is to build such an app!
