@@ -57,6 +57,8 @@ Returns all available forms for a specific event
 Event API - Get Form Schema: **GET** request to this url: 
 **https://fa-eventapi-us.azurewebsites.net/api/events/{eventid}/forms/{formid}**  
 Returns the schema for a specific form. The Schema describes what fields are in the form and what data type they are.
+> [!NOTE]
+> The function needs to return the schema as a **OpenAPI Schema** object
 
 We will use the first action to get a list of forms including their ids so that we can used that in the second action to get the schema of that form which is needed so that the Custom Connector knows which fields are available.
 
@@ -103,6 +105,14 @@ You will see that the body parameter is defined, but has currently no details ad
 !["Body parameter without details"](./assets/0303_04_submitemptybody.png)
 
 **Before**  
+- name: body  
+        in: body  
+        required: false  
+        schema:  
+        type: object  
+        properties: {}
+
+**After**
 ``- name: body  
           in: body  
           required: false  
@@ -110,7 +120,10 @@ You will see that the body parameter is defined, but has currently no details ad
             type: object  
             properties: {}``
 
-**After**
+After you made these changes, **Update Connector** and go back to Power Automate and create a new Flow **Submit Form** and add the action **Submit Form**. 
 
+At the beginning before you have filled the parameter you will only see the two parameter we had defined in our action.
+!["Submit Form Before Parameters are filled"](./assets/0303_05_pabefore.png)
 
-
+After you fill the two parameter - and wait a few seconds for the connector to make the call to grab the schema, depending on what schema you picked the action will show it's fields.
+!["Submit Form with Parameters filled"](./assets/0303_06_paafter.png)
