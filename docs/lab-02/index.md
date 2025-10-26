@@ -3,7 +3,8 @@
 In this lab, you will go through the following tasks:
 
 * Make parameters of action dynamic
-* Use a dynamic schema for your action requests & responses
+* Linking dynamic parameters
+* Use a dynamic schema for your action requests & responses **TODO**
 
 You will extend the connector you started building in the previous lab.
 
@@ -113,3 +114,62 @@ And because we defined the response properties of our GET/Tracks action we can n
 And the Custom Connector also knows that GET/Events returns an array (because we defined the reponse of the action!), so it automatically wraps the action in an **Apply to Each**
 
 !["Apply To Each"](./assets/0203_05_applytoeach.png)
+
+## 🔗 Linking parameters
+So far we only added actions to our connector with up to one parameter. Let's go the next step and have a more complex action. The Event API offers a "Sessions By Track" endpoint and for that it needs the event id and the track id. 
+
+### Add action with two linked parameters
+
+Leave Power Automate and go back to your Custom Connector to the **Definition** tab and add a new action like you did before. This is the Event API endpoint for it:
+
+Event API - Get Sessions by track: **GET** request to this url: 
+**https://fa-eventapi-us.azurewebsites.net/api/events/{eventid}/tracks/{trackid}** 
+
+You see that the URL has two dynamic values, eventid and sessionid. If you add it using the **Import from sample** you will have two parameters added to your action.
+
+!["Two parameter"](./assets/0204_01_twoparameter.png)
+
+Add the Dynamic Values to the parameter **eventid** like we did in the previous lab. The **trackid** parameter is more interesting, because here we want to use the GET/Tracks action which itself needs a parameter, not like the GET/Events action which doesn't required one.
+
+When you go to edit the **trackid** parameter, select Dynamic Dropdown and the **get-tracks** next to "Value" and "Value Display Name" you also have to select a value for the parameter **eventid**. This is not the parameter of the current action, but the parameter of the **get-tracks** action!
+
+!["Parameter Linking"](./assets/0204_02_dynamicactionwithparameter.png)
+
+You have the following options:
+- Pick one of the parameters of the current action (in our case "eventid" and "trackid")
+- Enter a custom value
+
+To make this action truly dynamic we want to use an existing parameter. Pick the **eventid** parameter to use the value the user select in the other parameter of this action. That parameter itself can also be a dynamic parameter so you can effectively link them.
+
+!["Parameters for trackid"](./assets/0204_03_gettracksparameter.png)
+
+After selecting **eventid** select similar than before **RowKey** as the id from the GET/Tracks action and **Name** as the display value.
+> [!NOTE]
+> If after selecting the Operation ID no values for the Dropdowns "Value" and "Value Display Name" are shown, then you have not defined the reponse of that action! Check in the previous lab the part **[Result of Operation](../lab-01/#result-of-operation)**
+
+Awesome! Remeber to **Update Connector** and afterwards let's go back to **Power Automate** to test our linked parameters.
+
+### Test linked parameters
+Similar to before create a new Power Automate Flow with Manual trigger called **Get Sessions by Track** and let's add our new action to check out the dynamic linking of parameters.
+
+> [!NOTE]
+> If the newly added action is not shown directly in Power Automate when selecting the Custom Connector this can be caused by caching. Sometimes updates to Custom Connectors need a few minutes to be shown. It's best to wait a few minutes and/or delete your browser cache. Also make sure to double check your Connector if you have updated it, a new update can also help.
+
+If you change the selected Event in the first parameter and open the dropdown for trackid you will see the loading of the tracks for that event.
+
+### Exercise!
+
+Build a new flow that combines the elements we created before:
+
+- Get all events
+- Per event: Get all tracks of that event
+- Per track: Get all sessions for that track
+
+Awesome! We now added actions with more parameters and linked them with each other. The linking of parameter can be done in more area and in the next lab we will looking into making the connector even more dynamic!
+
+
+
+
+
+
+
