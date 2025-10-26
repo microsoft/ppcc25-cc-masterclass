@@ -2,7 +2,7 @@
 
 ## Workshop presentations
 
-- [PowerPoint](https://github.com/microsoft/ppcc25-cc-masterclass/blob/de01e1d60bbab3f38226b721b088f93e3258e050/docs/presentations/PPCCCustomConnectorMasterclass.pdf)
+- [PowerPoint](https://raw.githubusercontent.com/microsoft/ppcc25-cc-masterclass/refs/heads/main/docs/presentations/PPCCCustomConnectorMasterclass.pdf)
 
 ## Microsoft Official Documentation
 
