@@ -10,7 +10,11 @@ Welcome to the **Custom Connector Masterclass** at Power Platform Community Conf
 
 In the Power Platform there are more than 1600 connectors available out of the box. This is a huge amount and offers you great functionality from the get-go. But what if you need to connect to a data source or a service that is not available in the Power Platform? Or what if you want to customize the functionality or the user interface of an existing connector? This is where custom connectors come in. Custom connectors are the superheroes of the Power Platform, because they allow you to extend its capabilities and create unique and tailored solutions.
 
-In this workshop, you will learn all about custom connectors, why they are the superheroes of the Power Platform, how you can easily build them and enhance your experience in the Power Platform. As a bonus – you will also learn about the new AI capabilities within custom connectors.
+In this workshop, you will learn all about custom connectors:
+
+- Why they are the superheroes of the Power Platform
+- How you can easily build them and enhance your experience in the Power Platform
+- As a bonus – you will also learn about the new AI capabilities within custom connectors.
 
 ## 🎯 What You'll Take Away
 
