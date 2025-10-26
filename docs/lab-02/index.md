@@ -122,7 +122,7 @@ So far we only added actions to our connector with up to one parameter. Let's go
 Leave Power Automate and go back to your Custom Connector to the **Definition** tab and add a new action like you did before. This is the Event API endpoint for it:
 
 Event API - Get Sessions by track: **GET** request to this url: 
-**https://fa-eventapi-us.azurewebsites.net/api/events/{eventid}/tracks/{trackid}** 
+**https://fa-eventapi-us.azurewebsites.net/api/events/{eventid}/tracks/{trackid}/sessions** 
 
 You see that the URL has two dynamic values, eventid and sessionid. If you add it using the **Import from sample** you will have two parameters added to your action.
 
@@ -150,6 +150,8 @@ Awesome! Remeber to **Update Connector** and afterwards let's go back to **Power
 
 ### Test linked parameters
 Similar to before create a new Power Automate Flow with Manual trigger called **Get Sessions by Track** and let's add our new action to check out the dynamic linking of parameters.
+
+!["Parameters for trackid"](./assets/0204_04_flowlinkedparameters.png)
 
 > [!NOTE]
 > If the newly added action is not shown directly in Power Automate when selecting the Custom Connector this can be caused by caching. Sometimes updates to Custom Connectors need a few minutes to be shown. It's best to wait a few minutes and/or delete your browser cache. Also make sure to double check your Connector if you have updated it, a new update can also help.
