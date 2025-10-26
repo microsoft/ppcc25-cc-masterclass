@@ -1,6 +1,6 @@
-# #PPCC25 - Custom Connector Masterclass
+# Custom Connector Masterclass
 
-![Copilot Studio](https://img.shields.io/badge/Custom%20Connector-Masterclass-blue)
+![Custom Connector Masterclass](https://img.shields.io/badge/Custom%20Connector-Masterclass-blue)
 ![Workshop](https://img.shields.io/badge/Workshop-Full%20Day-green)
 ![Level](https://img.shields.io/badge/Level-Intermediate-orange)
 
@@ -11,10 +11,6 @@ Welcome to the **Custom Connector Masterclass** at Power Platform Community Conf
 In the Power Platform there are more than 1600 connectors available out of the box. This is a huge amount and offers you great functionality from the get-go. But what if you need to connect to a data source or a service that is not available in the Power Platform? Or what if you want to customize the functionality or the user interface of an existing connector? This is where custom connectors come in. Custom connectors are the superheroes of the Power Platform, because they allow you to extend its capabilities and create unique and tailored solutions.
 
 In this workshop, you will learn all about custom connectors, why they are the superheroes of the Power Platform, how you can easily build them and enhance your experience in the Power Platform. As a bonus – you will also learn about the new AI capabilities within custom connectors.
-
-By the end of this workshop, you will be able to:
-
-
 
 ## 🎯 What You'll Take Away
 
@@ -44,15 +40,13 @@ By the end of this workshop, you will have:
 
 ## 🕐 Schedule
 
-**TO DO** 
-
 | Time | Activity |
 |------|----------|
 | 09:00 – 09:30 | **Welcome & Kick-Off** |
 | 09:30 – 09:45 | **Introduction & Lab 00** |
 | 09:45 – 10:45 | **Lab 01: Build your first connector** |
 | 10:45 – 11:00 | ☕ **Break** |
-| 11:00 – 12:00 | **Lab 02: Make your connector dynmamic** |
+| 11:00 – 12:00 | **Lab 02: Make your connector dynamic** |
 | 12:00 – 13:00 | 🍽️ **Lunch** |
 | 13:00 – 13:30 | **Buffer: Finishing Lab 01 & 02** |
 | 13:30 – 14:45 | **Lab 03: Advanced Features** |
@@ -87,4 +81,3 @@ By the end of this workshop, you will have:
 ---
 
 **Ready to to build Custom Connectors?** We can't wait to see what you'll build! 🎉
-
