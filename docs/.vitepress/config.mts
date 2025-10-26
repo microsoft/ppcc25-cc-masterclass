@@ -35,6 +35,7 @@ export default defineConfig({
           { text: "Lab 04", link: "/lab-04/" },
         ],
       },
+      { text: "Resources", link: "/resources" },
     ],
 
     socialLinks: [
