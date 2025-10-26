@@ -20,9 +20,11 @@ In a new tab the Custom Connector edit wizard will be opened in the first step.
 
 !["Create Connector Wizard - Naming](./assets/0100_01_wizardname.png)
 
-First step is given your Custom Connector a meaningful name, make sure to use a name your users will understand, this will show up in all UIs. Bonus points if you also add an icon below under **General Information**. Also give it's a description and remember to update the description later when new actions and functionalities are added. You can use this one first:
+First step is given your Custom Connector a meaningful name, make sure to use a name your users will understand, this will show up in all UIs. Bonus points if you also add an icon ([download icons](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Fmicrosoft%2Fppcc25-cc-masterclass%2Ftree%2Fmain%2Fdocs%2Flab-01%2Fresources)) below under **General Information**. Also give it's a description and remember to update the description later when new actions and functionalities are added. You can use this one first:
 
-"An event management API to work with community events. Can be used to retrieve information about events, including their sessions, tracks and more. Offers additional functionality to subscribe to changes and submit event forms."
+```text
+An event management API to work with community events. Can be used to retrieve information about events, including their sessions, tracks and more. Offers additional functionality to subscribe to changes and submit event forms.
+```
 
 Next you need to select **HTTPS** and fill in the **Host** and **Base URL**. The community event API can be reached via dhino (Middleware used to publish Dataverse data) under the following url. Do not fill the "https://" part in the host and you can only put the root URL until the first "/" there. The "Base URL" is the part of the URL which is common to all requests being done via this custom connector.
 
