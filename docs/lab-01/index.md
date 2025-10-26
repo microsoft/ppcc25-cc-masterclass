@@ -6,7 +6,7 @@ In this lab, you will go through the following tasks:
 * Setup authentication
 * Add operation with Parameters
 
-We will use the community event API as an example to connect to. It's a simple demo API for event management. 
+We will use the community event API as an example to connect to. It's a simple demo API for event management.
 
 ## 🔗 Create a connector from blank
 
@@ -26,15 +26,15 @@ First step is given your Custom Connector a meaningful name, make sure to use a 
 
 Next you need to select **HTTPS** and fill in the **Host** and **Base URL**. The community event API can be reached via dhino (Middleware used to publish Dataverse data) under the following url. Do not fill the "https://" part in the host and you can only put the root URL until the first "/" there. The "Base URL" is the part of the URL which is common to all requests being done via this custom connector.
 
-The Event API we are connecting to can be reached with this URL **https://fa-eventapi-us.azurewebsites.net/api**. You need to split this into the following parts in the wizard:
+The Event API we are connecting to can be reached with this URL **<https://fa-eventapi-us.azurewebsites.net/api>**. You need to split this into the following parts in the wizard:
 
 | Url Part | Value |
 |-----|-------------|
 | **Scheme** | HTTPS |
 | **Host** | fa-eventapi-us.azurewebsites.net |
-| **Base URL** | /api | 
+| **Base URL** | /api |
 
-!["Adding Host and Base URL"](./assets/0100_02_hosturl.png) 
+!["Adding Host and Base URL"](./assets/0100_02_hosturl.png)
 
 ## 🔐 Define Security / Authentication
 
@@ -62,8 +62,8 @@ All done! Very important: **You do not need to enter any API Key in this step!**
 
 The Event API is a multi tenant application which separates data per user. So as a first step we want to create demo data for it. In this case we are lucky, the Event API offers an action for this, so we don't have to type anything manual!
 
-Event API - Create Demo Data: **POST** request to this url: 
-**https://fa-eventapi-us.azurewebsites.net/api/setup/CreateDemoData** 
+Event API - Create Demo Data: **POST** request to this url:
+**<https://fa-eventapi-us.azurewebsites.net/api/setup/CreateDemoData>**
 
 We can use this as an ideal test to add the first action to our connector!
 
@@ -99,7 +99,7 @@ The wizard has a great feature called **Import from Example** where you can copy
 
 In the opened dialog fill in the URL and HTTP method from above. Since this is a simple request with no further information you are all set to go and can click **Import**
 
-!["Create From Example Details"](./assets/0103_04_requestexampledetails_post.png) 
+!["Create From Example Details"](./assets/0103_04_requestexampledetails_post.png)
 
 Congrats, your connector has its first action! 🥳 Let's quickly test if we did all steps correctly so far.
 
@@ -115,9 +115,9 @@ Because the connector is newly created there is no Connection yet so in order to
 
 !["Test Stage"](./assets/0104_02_testconnection.png)
 
-This will open a new tab where you have the default Create New Connection interface like for all connectors. Which fields are shown is dependent on the selected authentication method. In our case this is the API key. Recognize the name of this field? That's the label we defined in the **Security** step! Click **Create Connection** to create it. 
+This will open a new tab where you have the default Create New Connection interface like for all connectors. Which fields are shown is dependent on the selected authentication method. In our case this is the API key. Recognize the name of this field? That's the label we defined in the **Security** step! Click **Create Connection** to create it.
 
-As API Key use your **User Name**, so when your login is UserXYZ@workshop.onmicrosoft.com use UserYXZ. Make sure to use your User and NOT "UserXYZ" because the API Key differentiates between different users.
+As API Key use your **User Name**, so when your login is `UserXYZ@workshop.onmicrosoft.com` use UserYXZ. Make sure to use your User and NOT "UserXYZ" because the API Key differentiates between different users.
 
 !["Create Connection"](./assets/0104_03_testcreateconnection.png)
 
@@ -133,12 +133,15 @@ If all is set up correct and the connection has the right API Key you will see t
 
 First call made by your Custom Connector to the Event API!
 
-## ⚡ Create first real action 
+## ⚡ Create first real action
 
 Next we want to test if the demo data was created and add our first real API call to get all event data. The Event API offers this url to get a list of all available events:
 
-Event API - Get Events: **GET** request to this url: 
-**https://fa-eventapi-us.azurewebsites.net/api/events**  
+Event API - Get Events: **GET** request to this url:
+
+```text
+https://fa-eventapi-us.azurewebsites.net/api/events
+```
 
 ### Request
 
@@ -147,15 +150,15 @@ Follow the same steps as we did for the Create Demo Data operation:
 1. Pick an id for this operation and we will go on the **Request** part of it.
 1. Use the **Import from Example** to create the action
 
-!["Create Request from Example"](./assets/0103_01_requestexample.png)
+    !["Create Request from Example"](./assets/0103_01_requestexample.png)
 
-In the opened dialog fill in the URL and HTTP method from above. Since this is a simple request with no further information you are all set to go and can click **Import**
+    In the opened dialog fill in the URL and HTTP method from above. Since this is a simple request with no further information you are all set to go and can click **Import**
 
-!["Create From Example Details"](./assets/0103_02_requestexampledetails.png) 
+    !["Create From Example Details"](./assets/0103_02_requestexampledetails.png)
 
 1. Update the connector using **Update Connector** and wait until it is finished saving
 
-!["Update Connector"](./assets/0104_08_updateconnector.png) 
+    !["Update Connector"](./assets/0104_08_updateconnector.png)
 
 ### Saving and Testing
 
@@ -196,17 +199,18 @@ Also remember to **Update Connector** to publish your changes!
 !["Update Connector"](./assets/0105_05_updateconnector.png)
 
 ## 🔥 Increase the UX with user-friendly names
+
 One thing you could quickly tell was that our clear **operation ids** are not very user friendly in these kinds of UIs. But the great thing is that we can actually do something about this and within the Custom Connector add more information. For this we will go back to our Custom Connector, edit it, and go to definitions to update our Actions.
 
 First we will create more detailed descriptions of the actions themselves. With these you can give your action friendly names and also provide additional explanations which will be displayed as extended texts or tooltips. **And of course these descriptions are immensely  important for any AI you want to use your Custom Connector with.** Since AI is working with natural language description, these descriptions in Custom Connectors are not any longer nice to have, but an important step in increasing the quality of it!
 
 Add descriptions of what the action is doing, what parameters are needed and what the expected result is. **Do this for all future actions you will add later in these labs as well!**
 
-| Property | What to use it for | Best Practice
+| Property | What to use it for | Best Practice |
 |-----|-------------|-------------|
-| **Summary** | Title of action | Use a sentence like "Get all events"
-| **Description** | Verbose explanation of operation's functionality | Use longer sentances like "Return all events available including all their attributes"
-| **Operation ID** | Unique string to identify action | Used internally, use a consistent naming scheme for it
+| **Summary** | Title of action | Use a sentence like "Get all events" |
+| **Description** | Verbose explanation of operation's functionality | Use longer sentences like "Return all events available including all their attributes" |
+| **Operation ID** | Unique string to identify action | Used internally, use a consistent naming scheme for it |
 
 !["Action Details"](./assets/0107_01_actiondetails.png)
 
@@ -228,7 +232,7 @@ Remember to **Update Connector** after you make these changes as well.
 
 Let's get into the more interesting stuff, let's make more dynamic operations. The Event API has a lot more connected information regarding events, so let's check out those actions. For this we will add **Tracks** and **Sessions** with the goal of getting only that data per event.
 
-For the next steps you need the Id of an event to get it's related tracks and sessions. Use the GET/Events action added earlier to retrieve a list of events and pick one. The event id is called **RowKey** in the result. The lab will use **Power Platform Community Conference 2025** with the RowKey **54434FB9-66EC-4D93-B281-18EE129110AF** as an example. 
+For the next steps you need the Id of an event to get it's related tracks and sessions. Use the GET/Events action added earlier to retrieve a list of events and pick one. The event id is called **RowKey** in the result. The lab will use **Power Platform Community Conference 2025** with the RowKey **54434FB9-66EC-4D93-B281-18EE129110AF** as an example.
 
 !["New Action](./assets/0106_00_eventid.png)
 
@@ -240,11 +244,15 @@ Follow the same steps as we did in the operation, starting on the **Definition**
 
 Next step is calling the action which returns us tracks filtered by event. The Event API offers the following GET endpoint, here as an example for the event **Power Platform Community Conference**:
 
-**https://fa-eventapi-us.azurewebsites.net/api/events/54434FB9-66EC-4D93-B281-18EE129110AF/tracks**
+```text
+https://fa-eventapi-us.azurewebsites.net/api/events/54434FB9-66EC-4D93-B281-18EE129110AF/tracks
+```
 
 This is the endpoint for the event **South Coast Summit 2025**:
 
-**https://fa-eventapi-us.azurewebsites.net/api/events/D406AC81-AF37-48E2-AED0-1147FFCDFF23/tracks**
+```text
+https://fa-eventapi-us.azurewebsites.net/api/events/D406AC81-AF37-48E2-AED0-1147FFCDFF23/tracks
+```
 
 The dynamic part of this request is event id after "events/" and before "/tracks"
 
@@ -252,9 +260,11 @@ Select your newly created **get-tracks** action and use the  **Import From Sampl
 
 !["Add Action With Parameter"](./assets/0106_04_addparameteraction.png)
 
-Copy the URL from above, but this we modify the URL and mark which part should be a parameter. This is done by replacing the text with "{PARAMETERNAME}", so if we want to add a parameter named "trackid" we use the following URL:
+Copy the URL from above, but this we modify the URL and mark which part should be a parameter. This is done by replacing the text with `{PARAMETERNAME}`, so if we want to add a parameter named `trackid` we use the following URL:
 
-**https://fa-eventapi-us.azurewebsites.net/api/events/{eventid}/tracks** 
+```text
+https://fa-eventapi-us.azurewebsites.net/api/events/{eventid}/tracks
+```
 
 !["Dynamic Parameter"](./assets/0106_05_dynamicparamter.png)
 
@@ -278,8 +288,11 @@ Before we do that remember to also define the **Response** of the new get-tracks
 
 Exercise for you! The Event API also has an endpoint which lists all sessions of an event. It works the same way as the GET/Tracks action, so let's implement it in the same way.
 
-Event API - Get Sessions: **GET** request to this url: 
-**https://fa-eventapi-us.azurewebsites.net/api/events/{eventid}/sessions**  
+Event API - Get Sessions: **GET** request to this url:
+
+```text
+https://fa-eventapi-us.azurewebsites.net/api/events/{eventid}/sessions
+```
 
 After implementing it test your action and you should get a result like this:
 !["Successful test of Get Sessions"](./assets/0106_09_testsessions.png)
