@@ -102,12 +102,12 @@ When you go to the **body** parameter and click on **Edit** you see that we do n
 You will see that the body parameter is defined, but has currently no details added to it. We will overwrite this parameter manually in the Swagger Editor.
 !["Body parameter without details"](./assets/0303_04_submitemptybody.png)
 
-**Before**
-``- name: body
-          in: body
-          required: false
-          schema:
-            type: object
+**Before**  
+``- name: body  
+          in: body  
+          required: false  
+          schema:  
+            type: object  
             properties: {}``
 
 **After**
