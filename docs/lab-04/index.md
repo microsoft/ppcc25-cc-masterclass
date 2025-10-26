@@ -120,13 +120,16 @@ In the connection manager look for your Custom Connector and click on **Connect*
 !["Connection Manager"](./assets/lab03_copilot5.png)
 
 In the next screen it should pick up your exisiting connection, alternatively you could create a new one using your API Key. Click on **Submit** to continue. If your connection manager afterwards shows **Connected** you can close its tab and go back to the test pane.
-!["Connection Manager"](./assets/lab03_copilot6.png)
+!["Connection Manager - Connected"](./assets/lab03_copilot6.png)
 
 In the Test Pane you can now click on **Retry** and the prompt should be executed. 
 
-!["Connection Manager"](./assets/lab03_copilot7.png)
+!["Retried Prompt"](./assets/lab03_copilot7.png)
 
 Success! Our agent figured out that it should use our action and found a correct answer to our prompt!
 
 ## 🙏 Play around and test the limits
 Go ahead and try to get the agent to use the actions, especially the ones which need input from other actions. You will see that different prompts can lead to very different results.
+
+**Tip** if you get a similar error like this, then you didn't configure the default responses in your Custom Connector. Go ahead and fix it, afterwards it's recommended to remove that action as a tool from the Agent and add it again so that the Agent gets the newest metadata from it.
+!["Response Error"](./assets/lab03_copilot7.png)
