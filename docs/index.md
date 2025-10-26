@@ -54,9 +54,10 @@ By the end of this workshop, you will have:
 | 10:45 – 11:00 | ☕ **Break** |
 | 11:00 – 12:00 | **Lab 02: Make your connector dynmamic** |
 | 12:00 – 13:00 | 🍽️ **Lunch** |
-| 13:00 – 14:45 | **Lab 03: Advanced Features** |
+| 13:00 – 13:30 | **Buffer: Finishing Lab 01 & 02** |
+| 13:30 – 14:45 | **Lab 03: Advanced Features** |
 | 14:45 – 15:00 | ☕ **Break** |
-| 14:30 – 15:30 | **Lab 04: Copilot Studio Integration** |
+| 15:00 – 15:30 | **Lab 04: Copilot Studio Integration** |
 | 15:30 – 16:00 | **AMA & Closing** |
 | 16:00 | **Finish** |
 

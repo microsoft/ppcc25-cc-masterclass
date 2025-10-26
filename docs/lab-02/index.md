@@ -147,7 +147,7 @@ After selecting **eventid** select similar than before **RowKey** as the id from
 > [!NOTE]
 > If after selecting the Operation ID no values for the Dropdowns "Value" and "Value Display Name" are shown, then you have not defined the reponse of that action! Check in the previous lab the part **[Result of Operation](../lab-01/#result-of-operation)**
 
-Awesome! Remeber to **Update Connector** and afterwards let's go back to **Power Automate** to test our linked parameters.
+Awesome! Remeber to **Update Connector** and before wego back to **Power Automate** to test our linked parameters make sure to also test your new action in the Custom Connector **Test** tab and add the result as a **default response**!
 
 ### Test linked parameters
 Similar to before create a new Power Automate Flow with Manual trigger called **Get Sessions by Track** and let's add our new action to check out the dynamic linking of parameters.
