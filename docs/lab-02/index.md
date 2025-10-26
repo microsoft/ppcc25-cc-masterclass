@@ -4,7 +4,6 @@ In this lab, you will go through the following tasks:
 
 * Make parameters of action dynamic
 * Linking dynamic parameters
-* Use a dynamic schema for your action requests & responses **TODO**
 
 You will extend the connector you started building in the previous lab.
 
