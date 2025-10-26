@@ -44,26 +44,28 @@ Microsoft Edge comes pre-installed on Windows 10 and 11. If you need to install 
 With the credentials that were provided to you, let's log into the account you are going to use during the workshop.
 
 1. Go to [make.powerapps.com](https://make.powerapps.com)
-2. On the sign-in screen, enter the email address that has been provided to you and then click **Next**
+1. On the sign-in screen, enter the email address that has been provided to you and then click **Next**
 
-   ![Sign in screen](./assets/0001-0_sign-in-email.png)
+    ![Sign in screen](./assets/0001-0_sign-in-email.png)
 
-3. Then enter the Temporary Access Pass that has been provided to you and click **Sign in**
+1. Then enter the Temporary Access Pass that has been provided to you and click **Sign in**
 
-   ![Sign in screen](./assets/0001-1_sign-in-password.png)
+    ![Sign in screen](./assets/0001-1_sign-in-password.png)
 
-4. If you're prompted to stay signed in, click **Yes**
-5. If you're prompted which region you want to use you can stay in the default United States and just click on  **Get Started**
-![Region Selection](./assets/0001-2_default_region.png)
-6. Select **Yes** when being asked if you want to be signed in
+1. If you're prompted to stay signed in, click **Yes**
+1. If you're prompted which region you want to use you can stay in the default United States and just click on  **Get Started**
+
+    ![Region Selection](./assets/0001-2_default_region.png)
+
+1. Select **Yes** when being asked if you want to be signed in
 
     This will trigger the creation of your developer environment. The following loading screen will show:
 
     ![Loading developer environment creation](./assets/0001-3_preparingdevenvironment.png)
-7. After the loading is done you will be redirected to the actual maker portal. In our tenant Environment Routing is active so you should directly see your developer environment. Make sure that you are in the environment which has your user name and that the info about it being a developer environment is shown:
 
-![Check developer environment](./assets/0001-4_checkdevenvironment.png)
+1. After the loading is done you will be redirected to the actual maker portal. In our tenant Environment Routing is active so you should directly see your developer environment. Make sure that you are in the environment which has your user name and that the info about it being a developer environment is shown:
 
+    ![Check developer environment](./assets/0001-4_checkdevenvironment.png)
 
 ## 📂 Create a solution
 
