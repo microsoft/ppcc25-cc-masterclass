@@ -50,6 +50,8 @@
 - Detailed guide for connecting to secured web APIs
 - Microsoft Entra ID authentication configuration
 
+**[Authenticate a connector with Entra ID via OAuth](https://learn.microsoft.com/en-us/connectors/custom-connectors/azure-active-directory-authentication)**
+
 ### Advanced Topics
 
 **[Configure policy templates for custom connectors](https://learn.microsoft.com/training/modules/policy-templates-custom-connectors/)**
