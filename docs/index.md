@@ -48,14 +48,14 @@ By the end of this workshop, you will have:
 |------|----------|
 | 09:00 – 09:30 | **Welcome & Kick-Off** |
 | 09:30 – 09:45 | **Introduction & Lab 00** |
-| 09:45 – 10:45 | **Lab 01: Build your first connector** |
-| 10:45 – 11:00 | ☕ **Break** |
-| 11:00 – 12:00 | **Lab 02: Make your connector dynamic** |
+| 09:45 – 10:30 | **Lab 01: Build your first connector** |
+| 10:30 – 10:45 | ☕ **Break** |
+| 10:45 – 12:00 | **Lab 02: Make your connector dynamic** |
 | 12:00 – 13:00 | 🍽️ **Lunch** |
 | 13:00 – 13:30 | **Buffer: Finishing Lab 01 & 02** |
-| 13:30 – 14:45 | **Lab 03: Advanced Features** |
-| 14:45 – 15:00 | ☕ **Break** |
-| 15:00 – 15:30 | **Lab 04: Copilot Studio Integration** |
+| 13:30 – 14:30 | **Lab 03: Advanced Features** |
+| 14:30 – 14:45 | ☕ **Break** |
+| 14:45 – 15:30 | **Lab 04: Copilot Studio Integration** |
 | 15:30 – 16:00 | **AMA & Closing** |
 | 16:00 | **Finish** |
 
