@@ -29,7 +29,8 @@ By the end of this workshop, you will have:
 
 ## 👥 Prerequisites
 
-> **Note:** We expect attendees to have some basic experience with Power Platform.
+> [!NOTE]
+> We expect attendees to have some basic experience with Power Platform.
 
 - Familiarity with Power Platform fundamentals
 - Experience with APIs and web services (helpful but not required)
